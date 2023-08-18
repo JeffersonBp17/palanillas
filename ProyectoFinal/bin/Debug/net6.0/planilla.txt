@@ -1,0 +1,42 @@
+[
+  {
+    "Cedula": "118910195",
+    "NombreCompleto": "Jeffeson Baltodano",
+    "Correo": "jefferbalpere@gmial.com",
+    "HorasTrabajadas": 200.0,
+    "SalarioHora": 5000.0,
+    "SalarioBruto": 1000000.0,
+    "Rebajos": 10.0,
+    "SalarioNeto": 900000.0
+  },
+  {
+    "Cedula": "502390220",
+    "NombreCompleto": "Gerardo Baltodano",
+    "Correo": "gerardobagu@gmail.com",
+    "HorasTrabajadas": 250.0,
+    "SalarioHora": 4500.0,
+    "SalarioBruto": 1125000.0,
+    "Rebajos": 10.0,
+    "SalarioNeto": 1012500.0
+  },
+  {
+    "Cedula": "206520172",
+    "NombreCompleto": "Marianela Rojas Castro",
+    "Correo": "mariroca@gmail.com",
+    "HorasTrabajadas": 150.0,
+    "SalarioHora": 6000.0,
+    "SalarioBruto": 900000.0,
+    "Rebajos": 10.0,
+    "SalarioNeto": 810000.0
+  },
+  {
+    "Cedula": "208660081",
+    "NombreCompleto": "Fauricio Polanco Reyes",
+    "Correo": "fauriciopolanco@gmial.com",
+    "HorasTrabajadas": 150.0,
+    "SalarioHora": 5000.0,
+    "SalarioBruto": 750000.0,
+    "Rebajos": 10.0,
+    "SalarioNeto": 675000.0
+  }
+]
