@@ -1,9 +1,10 @@
 ﻿using System;
 
+//Lo siguientes son validaciones para el programa
 class Validations
 {
 
-    public static int GetIntInput(string prompt)
+    public static int ObtenerEntrada(string prompt)
     {
         int input;
         while (true)
@@ -22,7 +23,7 @@ class Validations
     }
 
 
-    public static string GetStringInput(string prompt)
+    public static string ObtenerStrings(string prompt)
     {
         Console.Write(prompt);
         return Console.ReadLine();

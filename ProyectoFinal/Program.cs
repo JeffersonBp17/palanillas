@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+//Se usa la libreria Json que es usada para transmitir informacion de una manera mas facil
 using Newtonsoft.Json;
 using Formatting = Newtonsoft.Json.Formatting;
 
@@ -13,7 +14,7 @@ namespace SaveUserInputToJson
         static void Main(string[] args)
         {
             while (true)
-            {
+            {//menu principal del programa
                 Console.WriteLine("Menú principal:");
                 Console.WriteLine("____________________");
                 Console.WriteLine("1. Agregar un empleado");
@@ -26,15 +27,15 @@ namespace SaveUserInputToJson
                 string option = Console.ReadLine();
 
                 switch (option)
-                {
+                {//switch para ver que seleciona cada usuario ya sea 1-2-3 o 4
                     case "1":
                         Console.Clear();
-                        List<Person> newPeople = GetUserInput();
-                        SaveDataToFile(newPeople);
+                        List<Person> newPeople = ObtenerUsuario();
+                        GuardarEmpleado(newPeople);
                         break;
                     case "2":
                         Console.Clear();
-                        ShowAllRecords();
+                        MostrarTodosSalarios();
                         Console.WriteLine();
                         Console.WriteLine("Presione ENTER para volver al menu principal");
                         Console.ReadKey();
@@ -44,7 +45,7 @@ namespace SaveUserInputToJson
                         Console.Clear();
                         Console.Write("Ingrese el ID del empleado que decea consultar: ");
                         string cedulaToSearch = Console.ReadLine();
-                        ShowRecordsByCedula(cedulaToSearch);
+                        MostrarEmpleadoId(cedulaToSearch);
                         Console.WriteLine();
                         Console.WriteLine("Presione ENTER para volver al menu principal");
                         Console.ReadKey();
@@ -62,30 +63,30 @@ namespace SaveUserInputToJson
                 }
             }
         }
-
-        static List<Person> LoadDataFromFile()
-        {
+        //se crea una lista para personas
+        static List<Person> ListaEmpleados()
+        {//se crea el archivo txt
             string filePath = "planilla.txt";
 
             if (File.Exists(filePath))
-            {
+            {   //se inicializa Json
                 string jsonData = File.ReadAllText(filePath);
                 return JsonConvert.DeserializeObject<List<Person>>(jsonData) ?? new List<Person>();
             }
 
             return new List<Person>();
         }
-
-        static void SaveDataToFile(List<Person> people)
+        //lo siguiente es para guardar la informacion en la variable persona
+        static void GuardarEmpleado(List<Person> people)
         {
-            List<Person> existingPeople = LoadDataFromFile();
+            List<Person> existingPeople = ListaEmpleados();
             existingPeople.AddRange(people);
 
             string jsonData = JsonConvert.SerializeObject(existingPeople, Formatting.Indented);
             string filePath = "planilla.txt";
 
             try
-            {
+            {//acá se edita el txt con streamWriter, el cual sirve para editar un txt
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
                     writer.Write(jsonData);
@@ -97,8 +98,8 @@ namespace SaveUserInputToJson
             }
         }
 
-        // Resto del código igual que antes...
-        static List<Person> GetUserInput()
+        
+        static List<Person> ObtenerUsuario()
         {
             List<Person> newPeople = new List<Person>();
 
@@ -160,12 +161,14 @@ namespace SaveUserInputToJson
                 Console.Write("Ingrese el salario por hora: ");
                 double PagoHoras = Convert.ToDouble(Console.ReadLine());
 
-                //calcula el salario bruto
+                //calcula el salario bruto y neto
                 int Rebajos = 10;
                 Double salario = Horas * PagoHoras;
+                // la variable calculo se usa para calcular el salario neto
                 Double Calculo = salario * Rebajos / 100;
                 Double salarioNeto = salario - Calculo;
 
+                //los datos optenidos en las variables anteriores se guardan en la lista para crear una nueva persona
                 newPeople.Add(new Person
                 {
                     Cedula = cedula,
@@ -184,9 +187,9 @@ namespace SaveUserInputToJson
 
             return newPeople;
         }
-        static void ShowAllRecords()
-        {
-            List<Person> allPeople = LoadDataFromFile();
+        static void MostrarTodosSalarios()
+        {// lo sigiente muestra en pantalla todos los salarios de los empleados 
+            List<Person> allPeople = ListaEmpleados();
 
             if (allPeople.Count == 0)
             {
@@ -199,10 +202,10 @@ namespace SaveUserInputToJson
                 Console.WriteLine($"\nCédula: {person.Cedula}, Nombre: {person.NombreCompleto}, Correo: {person.Correo}, Horas trabajadas: {person.HorasTrabajadas}, Salario por hora: {person.SalarioHora} Salario bruto: {person.SalarioBruto}, Rebajos: {person.Rebajos}, Salario neto: {person.SalarioNeto}");
             }
         }
-
-        static void ShowRecordsByCedula(string cedula)
+        // muestra en pantalla un empleado por id
+        static void MostrarEmpleadoId(string cedula)
         {
-            List<Person> allPeople = LoadDataFromFile();
+            List<Person> allPeople = ListaEmpleados();
             bool found = false;
 
             foreach (var person in allPeople)
@@ -222,7 +225,7 @@ namespace SaveUserInputToJson
     }
 
     class Person
-    {
+    {//en esta clase estan los datos de la lista Json
         public string Cedula { get; set; }
         public string NombreCompleto { get; set; }
         public string Correo { get; set; }

@@ -38,5 +38,15 @@
     "SalarioBruto": 750000.0,
     "Rebajos": 10.0,
     "SalarioNeto": 675000.0
+  },
+  {
+    "Cedula": "116580154",
+    "NombreCompleto": "Melvin Reyes",
+    "Correo": "melreyes10@hmail.com",
+    "HorasTrabajadas": 220.0,
+    "SalarioHora": 4500.0,
+    "SalarioBruto": 990000.0,
+    "Rebajos": 10.0,
+    "SalarioNeto": 891000.0
   }
 ]

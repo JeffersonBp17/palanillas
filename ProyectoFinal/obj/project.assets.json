@@ -139,11 +139,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal.csproj",
+      "projectUniqueName": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\Jefferson\\palanillas\\ProyectoFinal\\ProyectoFinal.csproj",
       "projectName": "ProyectoFinal",
-      "projectPath": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\ProyectoFinal\\ProyectoFinal\\ProyectoFinal.csproj",
+      "projectPath": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\Jefferson\\palanillas\\ProyectoFinal\\ProyectoFinal.csproj",
       "packagesPath": "C:\\Users\\jeffe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\ProyectoFinal\\ProyectoFinal\\obj\\",
+      "outputPath": "C:\\Users\\jeffe\\OneDrive\\Escritorio\\Proyecto final programacion\\Proyecto Final Progra I\\Jefferson\\palanillas\\ProyectoFinal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
